@@ -2,7 +2,7 @@ Feature: Fill about data
 
   Scenario: Fill data from excel file
     Given I am on the "home" page
-    When I click on "Contact us" button
+    When I click on "Contact us"
     And I fill the below textBoxes from excel
       | About Data   |
       | Name         |

@@ -1,4 +1,4 @@
-package steps;
+package runner;
 
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
@@ -8,5 +8,5 @@ import io.cucumber.testng.CucumberOptions;
         tags = "not @ignore",
         plugin = {"pretty", "html: target/cucumber-html-report"})
 
-public class runner extends AbstractTestNGCucumberTests {
+public class TestRunner extends AbstractTestNGCucumberTests {
 }

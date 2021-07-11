@@ -36,18 +36,12 @@ public class AboutPage extends PageBase {
     }
 
     public void clickSendButton(String elementName) {
-        by = By.xpath("//input[@value='" + elementName + "']");
-        System.out.println("Element '" + elementName + "' is found...");
-        System.out.println("Going to click '" + elementName + "' button...");
-        element = driver.findElement(by);
-        scrollToElement();
-        element.click();
+        clickButtonByValue(elementName);
     }
 
     public String checkEmailValidation() {
         by = By.xpath("//span[@class='wpcf7-not-valid-tip']");
         element = driver.findElement(by);
-        String errorMsg = element.getText();
-        return errorMsg;
+        return element.getText();
     }
 }

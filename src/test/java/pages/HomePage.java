@@ -6,7 +6,7 @@ public class HomePage extends PageBase {
 
     public void clickAboutUs(String elementName) {
         by = By.xpath("//*[contains(text(),'" + elementName + "')]");
-        clickButton(elementName);
+        clickButtonByText(elementName);
     }
 
     public void clickOnNavBarLink(String elementName) {

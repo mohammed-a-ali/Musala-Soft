@@ -19,13 +19,13 @@ public class PageBase extends Driver {
     protected WebElement element;
 
     protected void scrollToElement() {
-        waitForElementPresent(by);
+        waitForElementPresence(by);
         Actions actions = new Actions(driver);
         actions.moveToElement(element);
         actions.perform();
     }
 
-    protected void waitForElementPresent(By by) {
+    protected void waitForElementPresence(By by) {
         FluentWait<WebDriver> wait = new FluentWait(driver);
         wait.withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofMillis(200))
@@ -34,12 +34,21 @@ public class PageBase extends Driver {
                 .until(ExpectedConditions.presenceOfElementLocated(by));
     }
 
-    public void clickButton(String elementName) {
+    public void clickButtonByText(String elementName) {
         by = By.xpath("//*[contains(text(),'" + elementName + "')]");
         System.out.println("Element '" + elementName + "' is found...");
         System.out.println("Going to click '" + elementName + "' button...");
         element = driver.findElement(by);
         scrollToElement();
+        element.click();
+    }
+
+    public void clickButtonByValue(String elementName) {
+        by = By.xpath("//input[@type='submit' or @type='button' and @value='" + elementName + "']");
+        System.out.println("Element '" + elementName + "' is found...");
+        System.out.println("Going to click '" + elementName + "' button...");
+        waitForElementPresence(by);
+        element = driver.findElement(by);
         element.click();
     }
 
@@ -62,8 +71,8 @@ public class PageBase extends Driver {
 
     protected void verifyElementIsDisplayed(String elementName){
         System.out.println("Searching for " +elementName + "...");
+        waitForElementPresence(by);
         element = driver.findElement(by);
-        scrollToElement();
         if(element.isDisplayed())
             System.out.println("The " + elementName+ " is present in the page");
         else

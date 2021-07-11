@@ -14,7 +14,7 @@ public class TestCase2Steps {
         homePage.clickOnNavBarLink(linkText);
     }
 
-    @Then("I should see the {string}")
+    @Then("I should see the {string} in the company page")
     public void iShouldSeeThe(String sectionName) {
         CompanyPage companyPage = new CompanyPage();
         companyPage.verifyLeadershipSection(sectionName);

@@ -11,4 +11,17 @@ public class JoinUsPage extends PageBase {
         Select dropdown = new Select(element);
         dropdown.selectByValue(option);
     }
+
+    public void chooseOpenJob(String elementName) {
+        if (driver.findElements(By.xpath("(//article[@class='card-jobsHot']//*[contains(text(),'" + elementName + "')])[1]")).size() != 0) {
+            by = By.xpath("(//article[@class='card-jobsHot']//*[contains(text(),'" + elementName + "')])[1]");
+        } else {
+            by = By.xpath("(//article[@class='card-jobsHot']//*[contains(text(),'Developer')])[1]");
+        }
+        System.out.println("Element '" + elementName + "' is found...");
+        System.out.println("Going to choose '" + elementName + "' job...");
+        waitForElementPresence(by);
+        element = driver.findElement(by);
+        element.click();
+    }
 }

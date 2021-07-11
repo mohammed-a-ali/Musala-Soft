@@ -17,10 +17,10 @@ import java.util.List;
 import java.util.Map;
 
 public class TestCase1Steps {
-    @When("I click on {string} button")
-    public void iClickOnButton(String element) {
+    @When("I click on {string}")
+    public void iClickOn(String element) {
         PageBase pageBase = new HomePage();
-        pageBase.clickButton(element);
+        pageBase.clickButtonByText(element);
     }
 
     @And("I fill the below textBoxes from excel")
