@@ -16,6 +16,7 @@
 ***
 ![Cucumber is installed](https://github.com/mohammed-a-ali/Musala-Soft/blob/main/Images/InstallCucumberForJava.jpg)
 ![Gherkin is installed](https://github.com/mohammed-a-ali/Musala-Soft/blob/main/Images/InstallGherkin.jpg)
+![Gherkin is installed](https://github.com/mohammed-a-ali/Musala-Soft/blob/main/Images/InstallTestNG.jpg)
 ***
 
 If not installed please follow the following steps to install them
